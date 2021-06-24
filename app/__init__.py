@@ -3,6 +3,7 @@ from environs import Env
 
 from app.configs import database
 from app.configs import migrations
+from app.configs import commands
 
 # -------------------------------------
 
@@ -21,5 +22,6 @@ def create_app() -> Flask:
 
     database.init_app(app)
     migrations.init_app(app)
+    commands.init_app(app)
 
     return app
